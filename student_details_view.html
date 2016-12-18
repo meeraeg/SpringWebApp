@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Student Details</h1>
+		<div>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Id</th>
+				</tr>
+				<tr ng-repeat="x in student | orderBy : x.id">
+					<td>
+						<div ng-hide="editRec[$index]">{{x.name | uppercase}}</div>
+						<div ng-show="editRec[$index]"><input type="text" ng-model="x.name"></input></div>
+					</td>
+					<td>
+						<div ng-hide="editRec[$index]">{{x.age}}</div>
+						<div ng-show="editRec[$index]"><input type="text" ng-model="x.age"></input></div>
+					</td>
+					<td>
+						<div ng-hide="editRec[$index]">{{x.id}}</div>
+						<div ng-show="editRec[$index]"><input type="text" ng-model="x.id"></input></div>
+					</td>
+					<td><button ng-hide="editRec[$index]" ng-click="modifyData($index)">MODIFY</button>
+					<button ng-show="editRec[$index]" ng-click="updateData($index, x)">UPDATE</button></td>
+					<td><button ng-click="deleteData(x)">DELETE</button></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

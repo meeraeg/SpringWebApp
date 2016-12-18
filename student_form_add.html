@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Student Form</h1>
+		<form name="studForm" >
+				<p><label>Name:
+					<br><input type="text" ng-model="student.name" name="studName"></input>
+				</label></p>
+				<p><label>Age:
+					<br><input type="text" ng-model="student.age" name="studAge"></input>
+				</label></p>
+				<p><label>ID:
+					<br><input type="text" ng-model="student.id" name="studId"></input>
+				</label></p>
+			<br><input type="submit" ng-click="submitForm()" value="ADD"></button>
+		</form>
+	</body>
+</html>
